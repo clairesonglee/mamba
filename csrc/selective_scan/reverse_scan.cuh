@@ -101,7 +101,7 @@ struct WarpReverseScan {
     #ifndef USE_ROCM
         #define WARP_THREADS CUB_WARP_THREADS(0)
     #else
-        #define WARP_THREADS HIPCUB_WARP_THREADS
+        #define WARP_THREADS 64
     #endif
     static constexpr bool IS_ARCH_WARP = (LOGICAL_WARP_THREADS == WARP_THREADS);
     /// The number of warp scan steps
